@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EIMI APPAREL — Brand Identity Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=Jost:wght@300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #0A0A0A;
+    --carbon: #1A1A1A;
+    --iron: #4A4A4A;
+    --stone: #8A8580;
+    --ash: #B8B3AE;
+    --fog: #E2DDD8;
+    --linen: #F5F2EE;
+    --chalk: #FAFAF8;
+    --cream: #F0EBE3;
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-sans: 'Syne', sans-serif;
+    --font-body: 'Jost', sans-serif;
+    --font-label: 'Barlow Condensed', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--chalk);
+    color: var(--void);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,250,248,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--fog);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: var(--font-sans);
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--void);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--iron);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--void); }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 0; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 3rem; }
+  .container-wide { max-width: 1280px; margin: 0 auto; padding: 0 3rem; }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--ash);
+  }
+
+  /* ── TYPOGRAPHY ── */
+  h1.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(72px, 11vw, 140px);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 0.9;
+    color: var(--void);
+  }
+  h2.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    color: var(--void);
+    margin-bottom: 2rem;
+  }
+  h3.sub-title {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--void);
+    margin-bottom: 1rem;
+  }
+  p.body-text {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--iron);
+    line-height: 1.85;
+    max-width: 600px;
+  }
+  p.lead {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--iron);
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  /* ── DIVIDER ── */
+  .rule { width: 100%; height: 1px; background: var(--fog); margin: 3rem 0; }
+  .rule-short { width: 40px; height: 1px; background: var(--ash); margin-bottom: 2rem; }
+
+  /* ── COVER SECTION ── */
+  #cover {
+    min-height: 100vh;
+    background: var(--void);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  .cover-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .cover-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 4rem;
+  }
+  .cover-eyebrow {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 3rem;
+  }
+  .cover-title {
+    font-family: var(--font-sans);
+    font-size: clamp(64px, 14vw, 160px);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: white;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+  }
+  .cover-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+    margin-bottom: 4rem;
+  }
+  .cover-tagline {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+  .cover-rule {
+    width: 1px;
+    height: 80px;
+    background: rgba(255,255,255,0.15);
+    margin: 0 auto 2rem;
+  }
+
+  /* ── INDEX PAGE ── */
+  #index { background: var(--linen); }
+  .index-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--fog);
+    border: 1px solid var(--fog);
+  }
+  .index-item {
+    background: var(--linen);
+    padding: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .index-item:hover { background: var(--chalk); }
+  .index-num {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--ash);
+    min-width: 24px;
+  }
+  .index-name {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--void);
+    margin-bottom: 0.4rem;
+  }
+  .index-desc {
+    font-size: 12px;
+    color: var(--stone);
+    line-height: 1.5;
+  }
+
+  /* ── BRAND FOUNDATION ── */
+  .foundation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+  }
+  .foundation-card {
+    border-top: 1px solid var(--fog);
+    padding-top: 2rem;
+  }
+  .persona-block {
+    background: var(--void);
+    color: white;
+    padding: 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 4rem;
+  }
+  .persona-label {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.75rem;
+  }
+  .persona-value {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+  }
+  .tagline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--fog);
+    margin-top: 2rem;
+  }
+  .tagline-item {
+    padding: 1.8rem 2rem;
+    border-bottom: 1px solid var(--fog);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .tagline-item:nth-child(odd) { border-right: 1px solid var(--fog); }
+  .tagline-num {
+    font-family: var(--font-label);
+    font-size: 10px;
+    color: var(--ash);
+    letter-spacing: 0.1em;
+    min-width: 18px;
+    margin-top: 3px;
+  }
+  .tagline-text {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--void);
+    line-height: 1.4;
+  }
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .tag {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--iron);
+    border: 1px solid var(--fog);
+    padding: 6px 14px;
+    background: var(--chalk);
+  }
+
+  /* ── LOGO SYSTEM ── */
+  #logos { background: var(--void); color: white; }
+  #logos .section-label { color: rgba(255,255,255,0.3); }
+  #logos .section-label::before { background: rgba(255,255,255,0.15); }
+  #logos h2.section-title { color: white; }
+  #logos .sub-title { color: rgba(255,255,255,0.8); }
+  #logos p.body-text { color: rgba(255,255,255,0.5); }
+  #logos .rule { background: rgba(255,255,255,0.08); }
+
+  .logo-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 3rem 0;
+  }
+  .logo-cell {
+    background: var(--carbon);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-cell.dark-bg { background: var(--void); }
+  .logo-cell.light-bg { background: var(--linen); }
+  .logo-cell.medium-bg { background: #1E1E1E; }
+
+  .logo-primary {
+    font-family: var(--font-sans);
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: white;
+    line-height: 1;
+  }
+  .logo-primary.on-light { color: var(--void); }
+  .logo-tagline-sub {
+    font-family: var(--font-label);
+    font-size: 8px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: -0.5rem;
+  }
+  .logo-tagline-sub.on-light { color: var(--stone); }
+
+  .logo-secondary {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: white;
+    font-style: italic;
+  }
+  .logo-mono {
+    font-family: var(--font-sans);
+    font-size: 64px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  .logo-mono.on-light { color: var(--void); }
+
+  .logo-wordmark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .logo-wordmark .first-word {
+    font-family: var(--font-sans);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: white;
+    line-height: 1;
+  }
+  .logo-wordmark .divider-line {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+  }
+  .logo-wordmark .second-word {
+    font-family: var(--font-label);
+    font-size: 9px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .logo-stamp {
+    width: 90px;
+    height: 90px;
+    border: 2px solid rgba(255,255,255,0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    transform: rotate(-3deg);
+  }
+  .logo-stamp span:first-child {
+    font-family: var(--font-sans);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: white;
+    text-transform: uppercase;
+  }
+  .logo-stamp span:last-child {
+    font-family: var(--font-label);
+    font-size: 7px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+  }
+
+  .logo-label {
+    font-family: var(--font-label);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  .logo-label.on-light { color: var(--ash); }
+
+  .logo-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  .logo-detail-item { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; }
+  .logo-detail-title {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.75rem;
+  }
+  .logo-detail-body {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+
+  /* ── COLOR SYSTEM ── */
+  .palette-block { margin-bottom: 5rem; }
+  .palette-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--fog);
+  }
+  .palette-name {
+    font-family: var(--font-sans);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--void);
+  }
+  .palette-sub {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 120px;
+    gap: 4px;
+    margin-bottom: 2rem;
+  }
+  .swatch {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    cursor: default;
+    transition: transform 0.2s;
+  }
+  .swatch:hover { transform: scaleY(1.05); transform-origin: bottom; }
+  .swatch-name {
+    font-family: var(--font-label);
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .swatch-hex {
+    font-family: var(--font-body);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    opacity: 0.55;
+  }
+  .palette-details {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+  .palette-meaning { font-size: 14px; color: var(--iron); line-height: 1.7; }
+  .palette-usage { font-size: 13px; color: var(--stone); line-height: 1.7; }
+
+  /* ── TYPOGRAPHY ── */
+  .type-showcase { margin: 3rem 0; }
+  .type-row {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--fog);
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .type-info { }
+  .type-role {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 0.5rem;
+  }
+  .type-font-name {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--void);
+    margin-bottom: 0.25rem;
+  }
+  .type-details { font-size: 11px; color: var(--ash); }
+  .type-sample-1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 60px);
+    font-weight: 300;
+    color: var(--void);
+    line-height: 1;
+  }
+  .type-sample-2 {
+    font-family: var(--font-sans);
+    font-size: clamp(24px, 3.5vw, 44px);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--void);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .type-sample-3 {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--iron);
+    line-height: 1.8;
+  }
+  .type-sample-4 {
+    font-family: var(--font-label);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--void);
+  }
+  .type-sample-5 {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--stone);
+    letter-spacing: 0.05em;
+  }
+
+  .type-pairing {
+    background: var(--linen);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  .pairing-label {
+    font-family: var(--font-label);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 1rem;
+  }
+  .pairing-demo-a {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--void);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .pairing-demo-b {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--stone);
+    line-height: 1.8;
+  }
+  .pairing-demo-c {
+    font-family: var(--font-sans);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--void);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .pairing-demo-d {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--stone);
+    line-height: 1.8;
+  }
+
+  /* ── PATTERNS ── */
+  #patterns { background: var(--linen); }
+  .pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .pattern-card {
+    background: var(--chalk);
+    border: 1px solid var(--fog);
+    overflow: hidden;
+  }
+  .pattern-preview {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .pattern-info { padding: 1.25rem; }
+  .pattern-title {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--void);
+    margin-bottom: 0.4rem;
+  }
+  .pattern-desc { font-size: 12px; color: var(--stone); line-height: 1.5; }
+
+  /* SVG patterns inline */
+  .pat-lines { background: repeating-linear-gradient(90deg, var(--ash) 0px, var(--ash) 0.5px, transparent 0.5px, transparent 24px); }
+  .pat-grid {
+    background-image:
+      linear-gradient(var(--fog) 1px, transparent 1px),
+      linear-gradient(90deg, var(--fog) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .pat-diagonal { background: repeating-linear-gradient(45deg, var(--ash) 0px, var(--ash) 0.5px, transparent 0.5px, transparent 16px); }
+  .pat-dots {
+    background-image: radial-gradient(var(--ash) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+  .pat-wave-content {
+    font-family: var(--font-sans);
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--fog);
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 120%;
+    text-align: center;
+    line-height: 1.2;
+    transform: rotate(-8deg);
+  }
+  .pat-mono-ea {
+    font-family: var(--font-sans);
+    font-size: 72px;
+    font-weight: 800;
+    color: var(--fog);
+    opacity: 0.6;
+    letter-spacing: -0.02em;
+    transform: rotate(-12deg);
+  }
+  .pat-texture {
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(0,0,0,0.02) 20px, rgba(0,0,0,0.02) 21px),
+      repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(0,0,0,0.02) 20px, rgba(0,0,0,0.02) 21px);
+  }
+  .pat-japanese {
+    background: var(--cream);
+    position: relative;
+  }
+  .pat-japanese::before, .pat-japanese::after {
+    content: '';
+    position: absolute;
+    border: 1px solid var(--ash);
+  }
+  .pat-japanese::before {
+    top: 20px; left: 20px; right: 20px; bottom: 20px;
+    border-radius: 50%;
+  }
+  .pat-japanese::after {
+    top: 35px; left: 35px; right: 35px; bottom: 35px;
+    border-radius: 50%;
+  }
+
+  /* ── APPAREL DIRECTION ── */
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--fog);
+    border: 1px solid var(--fog);
+    margin-top: 3rem;
+  }
+  .collection-card {
+    background: var(--chalk);
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+  }
+  .collection-num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--fog);
+    line-height: 1;
+    width: 48px;
+    flex-shrink: 0;
+  }
+  .collection-title {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--void);
+    margin-bottom: 0.75rem;
+  }
+  .collection-desc { font-size: 13px; color: var(--iron); line-height: 1.65; }
+  .collection-palette {
+    display: flex;
+    gap: 4px;
+    margin-top: 1rem;
+  }
+  .collection-swatch {
+    width: 16px;
+    height: 16px;
+    border-radius: 0;
+  }
+
+  .design-concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .concept-card {
+    border: 1px solid var(--fog);
+    padding: 2rem;
+    background: var(--linen);
+  }
+  .concept-icon {
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--fog);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--stone);
+    text-transform: uppercase;
+  }
+  .concept-title {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--void);
+    margin-bottom: 0.75rem;
+  }
+  .concept-body { font-size: 13px; color: var(--stone); line-height: 1.65; }
+
+  /* ── PACKAGING ── */
+  #packaging { background: var(--void); color: white; }
+  #packaging .section-label { color: rgba(255,255,255,0.3); }
+  #packaging .section-label::before { background: rgba(255,255,255,0.15); }
+  #packaging h2.section-title { color: white; }
+  #packaging h3.sub-title { color: rgba(255,255,255,0.7); }
+  #packaging p.body-text { color: rgba(255,255,255,0.5); }
+  #packaging .rule { background: rgba(255,255,255,0.08); }
+
+  .packaging-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    margin-top: 3rem;
+  }
+  .pack-item {
+    background: #141414;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .pack-icon {
+    width: 56px;
+    height: 56px;
+    border: 1px solid rgba(255,255,255,0.12);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+  .pack-title {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+  .pack-material {
+    font-family: var(--font-label);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+  }
+  .pack-detail { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+  .finish-tag {
+    display: inline-block;
+    font-family: var(--font-label);
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 4px 10px;
+    color: rgba(255,255,255,0.35);
+    margin-top: 0.5rem;
+    margin-right: 4px;
+  }
+
+  /* ── SOCIAL MEDIA ── */
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .social-platform {
+    border: 1px solid var(--fog);
+    padding: 2.5rem;
+  }
+  .platform-icon {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--void);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--fog);
+  }
+  .platform-title {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--void);
+    margin-bottom: 1rem;
+  }
+  .platform-body { font-size: 13px; color: var(--stone); line-height: 1.7; }
+
+  .content-pillars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .pillar {
+    background: var(--void);
+    color: white;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .pillar-pct {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .pillar-name {
+    font-family: var(--font-label);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+  .pillar-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .mood-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .mood-card {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .mood-keyword {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── BRAND AESTHETIC ── */
+  #aesthetic { background: var(--linen); }
+  .atmosphere-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2.5rem 0;
+  }
+  .atm-word {
+    font-family: var(--font-display);
+    font-style: italic;
+    line-height: 1;
+    color: var(--void);
+    opacity: 0.7;
+  }
+  .atm-word.size-1 { font-size: 14px; opacity: 0.4; }
+  .atm-word.size-2 { font-size: 20px; opacity: 0.6; }
+  .atm-word.size-3 { font-size: 28px; opacity: 0.75; }
+  .atm-word.size-4 { font-size: 38px; opacity: 0.9; }
+
+  .photo-direction {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  .photo-rule { border-top: 1px solid var(--fog); padding-top: 1.5rem; }
+  .photo-title {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--void);
+    margin-bottom: 1rem;
+  }
+  .photo-body { font-size: 13px; color: var(--stone); line-height: 1.7; }
+
+  /* ── FINAL SUMMARY ── */
+  #final { background: var(--void); color: white; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; }
+  #final .container { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .final-title {
+    font-family: var(--font-sans);
+    font-size: clamp(48px, 10vw, 120px);
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: white;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+  }
+  .final-sub {
+    font-family: var(--font-display);
+    font-size: clamp(16px, 2vw, 22px);
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.45);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 4rem;
+  }
+  .brand-dna {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    width: 100%;
+    background: rgba(255,255,255,0.06);
+    margin-bottom: 5rem;
+  }
+  .dna-cell {
+    background: #0E0E0E;
+    padding: 2.5rem 2rem;
+    text-align: left;
+  }
+  .dna-label {
+    font-family: var(--font-label);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 0.75rem;
+  }
+  .dna-value {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.4;
+  }
+  .final-footer {
+    font-family: var(--font-label);
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ── UTILITY ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+  .mb-2 { margin-bottom: 2rem; }
+  .mb-3 { margin-bottom: 3rem; }
+  .mb-4 { margin-bottom: 4rem; }
+  .mt-3 { margin-top: 3rem; }
+  .mt-4 { margin-top: 4rem; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--chalk); }
+  ::-webkit-scrollbar-thumb { background: var(--ash); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .container, .container-wide { padding: 0 1.5rem; }
+    section { padding: 60px 0; }
+    .foundation-grid, .two-col, .three-col, .logo-showcase-grid,
+    .swatches, .collection-grid, .design-concepts-grid, .social-grid,
+    .content-pillars, .mood-grid, .packaging-grid, .photo-direction,
+    .brand-dna, .index-grid, .palette-details, .logo-detail-grid,
+    .type-row, .type-pairing, .pattern-grid, .persona-block, .tagline-grid
+    { grid-template-columns: 1fr !important; }
+    .cover-title { font-size: 52px; }
+    .logo-cell { padding: 2rem 1.5rem; }
+    .mood-grid { grid-template-columns: repeat(2, 1fr); }
+    .swatches { height: auto; grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#cover" class="nav-logo">Eimi Apparel</a>
+  <ul class="nav-links">
+    <li><a href="#foundation">Foundation</a></li>
+    <li><a href="#logos">Logo</a></li>
+    <li><a href="#colors">Color</a></li>
+    <li><a href="#typography">Type</a></li>
+    <li><a href="#apparel">Apparel</a></li>
+    <li><a href="#packaging">Packaging</a></li>
+    <li><a href="#social">Social</a></li>
+  </ul>
+</nav>
+
+<!-- ── COVER ──────────────────────────────────────────────── -->
+<section id="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-content">
+    <p class="cover-eyebrow">Brand Identity System — Complete Brand Kit</p>
+    <div class="cover-rule"></div>
+    <h1 class="cover-title">EIMI</h1>
+    <p class="cover-subtitle">Apparel</p>
+    <p class="cover-tagline">Minimal Luxury · Modern Streetwear · Premium Basics</p>
+  </div>
+</section>
+
+<!-- ── CONTENTS ───────────────────────────────────────────── -->
+<section id="index">
+  <div class="container">
+    <div class="section-label">Contents</div>
+    <h2 class="section-title">Brand Identity<br>System</h2>
+    <p class="lead">A complete visual and strategic framework for EIMI APPAREL — from foundational values to final packaging experience.</p>
+    <div class="rule"></div>
+    <div class="index-grid">
+      <a href="#foundation" class="index-item">
+        <span class="index-num">01</span>
+        <div>
+          <p class="index-name">Brand Foundation</p>
+          <p class="index-desc">Mission, vision, values, persona, slogans & campaign lines</p>
+        </div>
+      </a>
+      <a href="#logos" class="index-item">
+        <span class="index-num">02</span>
+        <div>
+          <p class="index-name">Logo System</p>
+          <p class="index-desc">Primary, secondary, monogram, stamp & icon variants</p>
+        </div>
+      </a>
+      <a href="#colors" class="index-item">
+        <span class="index-num">03</span>
+        <div>
+          <p class="index-name">Color Palette</p>
+          <p class="index-desc">4 premium palettes with HEX, RGB, CMYK & usage guides</p>
+        </div>
+      </a>
+      <a href="#typography" class="index-item">
+        <span class="index-num">04</span>
+        <div>
+          <p class="index-name">Typography System</p>
+          <p class="index-desc">Display, headline, body & label type hierarchy</p>
+        </div>
+      </a>
+      <a href="#patterns" class="index-item">
+        <span class="index-num">05</span>
+        <div>
+          <p class="index-name">Pattern & Graphic Style</p>
+          <p class="index-desc">Print concepts, textures, monogram patterns & layout styles</p>
+        </div>
+      </a>
+      <a href="#apparel" class="index-item">
+        <span class="index-num">06</span>
+        <div>
+          <p class="index-name">Apparel Direction</p>
+          <p class="index-desc">10 collection concepts, design themes & placement guides</p>
+        </div>
+      </a>
+      <a href="#packaging" class="index-item">
+        <span class="index-num">07</span>
+        <div>
+          <p class="index-name">Packaging System</p>
+          <p class="index-desc">Tags, mailers, labels, thank-you cards & finishing specs</p>
+        </div>
+      </a>
+      <a href="#social" class="index-item">
+        <span class="index-num">08</span>
+        <div>
+          <p class="index-name">Social Media & Aesthetic</p>
+          <p class="index-desc">Instagram, TikTok, content pillars & photography direction</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── 01 BRAND FOUNDATION ────────────────────────────────── -->
+<section id="foundation">
+  <div class="container">
+    <div class="section-label">01 — Brand Foundation</div>
+    <h2 class="section-title">The Core<br>Identity</h2>
+
+    <div class="foundation-grid">
+      <div class="foundation-card">
+        <h3 class="sub-title">Brand Mission</h3>
+        <p class="body-text">EIMI APPAREL exists to redefine what premium basics mean for the modern generation — crafting garments that speak through silence. Every piece is a deliberate act of restraint: where less becomes the loudest statement, and quality becomes the only embellishment worth having.</p>
+      </div>
+      <div class="foundation-card">
+        <h3 class="sub-title">Brand Vision</h3>
+        <p class="body-text">To become the most coveted minimalist streetwear label in Southeast Asia and beyond — a brand synonymous with quiet confidence, effortless cool, and the kind of timeless aesthetic that transcends seasonal trends. EIMI is not a moment. EIMI is a movement.</p>
+      </div>
+      <div class="foundation-card">
+        <h3 class="sub-title">Brand Values</h3>
+        <div class="tag-list">
+          <span class="tag">Intentional Restraint</span>
+          <span class="tag">Quiet Confidence</span>
+          <span class="tag">Material Integrity</span>
+          <span class="tag">Cultural Fluency</span>
+          <span class="tag">Timeless Over Trendy</span>
+          <span class="tag">Considered Luxury</span>
+        </div>
+      </div>
+      <div class="foundation-card">
+        <h3 class="sub-title">Brand Personality</h3>
+        <p class="body-text">EIMI speaks like the most stylish person in a room who never needs to announce it. Reserved yet magnetic. Aware without being arrogant. The brand carries the energy of Harajuku silence — of someone who moves through space with deliberate grace, dressed entirely in shades of shadow and stone.</p>
+      </div>
+    </div>
+
+    <div class="two-col mb-4">
+      <div>
+        <h3 class="sub-title">Brand Voice & Tone</h3>
+        <p class="body-text">Sparse. Poetic. Precise. EIMI speaks in fragments that carry weight. Copy is never verbose — every word earns its place. Tone ranges from contemplative editorial prose in long-form contexts to single, crystalline lines in product and campaign contexts. Silence is also a brand voice.</p>
+        <div class="tag-list" style="margin-top:1.5rem">
+          <span class="tag">Sparse</span>
+          <span class="tag">Poetic</span>
+          <span class="tag">Measured</span>
+          <span class="tag">Authoritative</span>
+          <span class="tag">Never Loud</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub-title">Unique Selling Proposition</h3>
+        <p class="body-text">EIMI occupies the rare space between Korean quiet fashion and Western premium streetwear — producing considered wardrobe essentials with editorial presence. Where other brands shout, EIMI silences. Where others chase hype, EIMI builds permanence. The garment is the statement.</p>
+        <div class="rule-short" style="margin-top:1.5rem"></div>
+        <p style="font-family: var(--font-display); font-style:italic; font-size:17px; color:var(--iron); line-height:1.6;">"Wear less. Say more."</p>
+      </div>
+    </div>
+
+    <!-- Ideal Customer Persona -->
+    <div class="persona-block">
+      <div>
+        <p class="persona-label">Name & Profile</p>
+        <p class="persona-value" style="font-size:18px; font-family:var(--font-display); font-style:italic; color:white; margin-bottom:1rem;">Kai, 24 — Seoul-influenced, Metro-based</p>
+        <p class="persona-label">Psychographic</p>
+        <p class="persona-value">Discovers brands through editorial Pinterest boards and IG Reels. Follows Highsnobiety, Hypebeast Lifestyle, and Korean fashion curators. Shops intentionally — buys less, buys better. Values provenance, texture, and visual coherence. Actively avoids fast fashion.</p>
+      </div>
+      <div>
+        <p class="persona-label">Behavior</p>
+        <p class="persona-value">Spends ₱1,500–₱4,000 per piece. Neutral palette loyalty. Seeks pieces that "go with everything." Curates an aesthetic wardrobe. Shares OOTD without branding oversaturation. Considers packaging part of the product experience.</p>
+        <p class="persona-label" style="margin-top:1.5rem">Brands They Also Buy</p>
+        <p class="persona-value">Fear of God Essentials · COS · Uniqlo Premium · Ader Error · Mango Man · local minimal brands</p>
+      </div>
+    </div>
+
+    <!-- Emotional Strategy -->
+    <div class="mt-4 mb-4">
+      <h3 class="sub-title">Emotional Branding Strategy</h3>
+      <div class="three-col mt-3">
+        <div class="foundation-card">
+          <h3 class="sub-title">Aspiration Layer</h3>
+          <p class="body-text" style="max-width:100%">EIMI makes the customer feel they belong to a curated world of taste. Wearing EIMI signals discernment — not wealth. It communicates that you choose well, care about craft, and understand that fashion can be silent poetry.</p>
+        </div>
+        <div class="foundation-card">
+          <h3 class="sub-title">Identity Layer</h3>
+          <p class="body-text" style="max-width:100%">The brand becomes an extension of personal identity — calm, considered, and modern. EIMI aligns with people who find beauty in restraint. This identity alignment creates repeat customers who feel the brand "gets" them before they say a word.</p>
+        </div>
+        <div class="foundation-card">
+          <h3 class="sub-title">Experience Layer</h3>
+          <p class="body-text" style="max-width:100%">From digital discovery to physical unboxing, every EIMI touchpoint triggers a sensory response. The cool silence of the website. The soft weight of the packaging. The tactile satisfaction of the garment. Every moment is curated luxury.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Taglines -->
+    <h3 class="sub-title">10 Premium Tagline / Slogan Ideas</h3>
+    <div class="tagline-grid">
+      <div class="tagline-item"><span class="tagline-num">01</span><span class="tagline-text">Wear less. Say more.</span></div>
+      <div class="tagline-item"><span class="tagline-num">02</span><span class="tagline-text">Dressed in absence.</span></div>
+      <div class="tagline-item"><span class="tagline-num">03</span><span class="tagline-text">The quiet ones always win.</span></div>
+      <div class="tagline-item"><span class="tagline-num">04</span><span class="tagline-text">Nothing extra. Everything essential.</span></div>
+      <div class="tagline-item"><span class="tagline-num">05</span><span class="tagline-text">Made for those who already know.</span></div>
+      <div class="tagline-item"><span class="tagline-num">06</span><span class="tagline-text">Premium silence.</span></div>
+      <div class="tagline-item"><span class="tagline-num">07</span><span class="tagline-text">Clothes that don't need to speak first.</span></div>
+      <div class="tagline-item"><span class="tagline-num">08</span><span class="tagline-text">Where every detail earns its place.</span></div>
+      <div class="tagline-item"><span class="tagline-num">09</span><span class="tagline-text">존재만으로 충분하다. — Enough by simply existing.</span></div>
+      <div class="tagline-item" style="border-right:none;"><span class="tagline-num">10</span><span class="tagline-text">Crafted for the considered few.</span></div>
+    </div>
+
+    <div class="mt-4">
+      <h3 class="sub-title">10 Social Media Brand Phrases</h3>
+      <div class="tagline-grid">
+        <div class="tagline-item"><span class="tagline-num">01</span><span class="tagline-text">Dressed in gray tones and good intentions.</span></div>
+        <div class="tagline-item"><span class="tagline-num">02</span><span class="tagline-text">New drop. Less is still more.</span></div>
+        <div class="tagline-item"><span class="tagline-num">03</span><span class="tagline-text">The wardrobe edit your future self already owns.</span></div>
+        <div class="tagline-item"><span class="tagline-num">04</span><span class="tagline-text">Seoul-calm. Street-ready.</span></div>
+        <div class="tagline-item"><span class="tagline-num">05</span><span class="tagline-text">Same aesthetic. Every season.</span></div>
+        <div class="tagline-item"><span class="tagline-num">06</span><span class="tagline-text">If it's not considered, it's not EIMI.</span></div>
+        <div class="tagline-item"><span class="tagline-num">07</span><span class="tagline-text">Soft laundered linen. Hard opinions on fast fashion.</span></div>
+        <div class="tagline-item"><span class="tagline-num">08</span><span class="tagline-text">Available now. Gone when it's gone.</span></div>
+        <div class="tagline-item"><span class="tagline-num">09</span><span class="tagline-text">Not a collection. A conviction.</span></div>
+        <div class="tagline-item" style="border-right:none;"><span class="tagline-num">10</span><span class="tagline-text">EIMI. Restocked for the ones who waited.</span></div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <h3 class="sub-title">10 Luxury Campaign Headlines</h3>
+      <div class="tagline-grid">
+        <div class="tagline-item"><span class="tagline-num">01</span><span class="tagline-text">This is not fashion. This is restraint.</span></div>
+        <div class="tagline-item"><span class="tagline-num">02</span><span class="tagline-text">Autumn / Winter: The Architecture of Quiet.</span></div>
+        <div class="tagline-item"><span class="tagline-num">03</span><span class="tagline-text">A Study in Subtraction — EIMI SS25</span></div>
+        <div class="tagline-item"><span class="tagline-num">04</span><span class="tagline-text">For the ones who dress in full sentences.</span></div>
+        <div class="tagline-item"><span class="tagline-num">05</span><span class="tagline-text">Void Collection — Where Black Becomes a Wardrobe.</span></div>
+        <div class="tagline-item"><span class="tagline-num">06</span><span class="tagline-text">TERROIR — Dressed in the colors of things that last.</span></div>
+        <div class="tagline-item"><span class="tagline-num">07</span><span class="tagline-text">The Seoul Standard. Set in fabric.</span></div>
+        <div class="tagline-item"><span class="tagline-num">08</span><span class="tagline-text">MONOLITH — When the garment speaks in silence.</span></div>
+        <div class="tagline-item"><span class="tagline-num">09</span><span class="tagline-text">Dusk Season: Wear the hour before everything changes.</span></div>
+        <div class="tagline-item" style="border-right:none;"><span class="tagline-num">10</span><span class="tagline-text">Nothing added. Nothing removed. Just EIMI.</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── 02 LOGO SYSTEM ──────────────────────────────────────── -->
+<section id="logos">
+  <div class="container">
+    <div class="section-label">02 — Logo System</div>
+    <h2 class="section-title">Identity<br>Architecture</h2>
+    <p class="lead">Seven logo expressions. One singular identity. Each variant is designed to function across every surface — from 4mm embroidery to large-format campaign walls.</p>
+    <div class="rule"></div>
+
+    <div class="logo-showcase-grid">
+      <!-- Primary Logo -->
+      <div class="logo-cell dark-bg" style="background:#0A0A0A;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+          <span class="logo-primary">EIMI</span>
+          <div style="width:100%; height:0.5px; background:rgba(255,255,255,0.15);"></div>
+          <span class="logo-tagline-sub">Apparel</span>
+        </div>
+        <span class="logo-label">Primary Logo — Dark BG</span>
+      </div>
+
+      <!-- Primary on Light -->
+      <div class="logo-cell light-bg">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+          <span class="logo-primary on-light">EIMI</span>
+          <div style="width:100%; height:0.5px; background:var(--fog);"></div>
+          <span class="logo-tagline-sub on-light">Apparel</span>
+        </div>
+        <span class="logo-label on-light">Primary Logo — Light BG</span>
+      </div>
+
+      <!-- Secondary: Italic Serif -->
+      <div class="logo-cell medium-bg">
+        <span class="logo-secondary">Eimi</span>
+        <span class="logo-label">Secondary Logo — Serif Italic</span>
+      </div>
+
+      <!-- EA Monogram -->
+      <div class="logo-cell dark-bg" style="background:#0A0A0A;">
+        <span class="logo-mono">EA</span>
+        <span class="logo-label">Monogram — EA</span>
+      </div>
+
+      <!-- Wordmark Stack -->
+      <div class="logo-cell medium-bg">
+        <div class="logo-wordmark">
+          <span class="first-word">EIMI</span>
+          <div class="divider-line"></div>
+          <span class="second-word">Premium Apparel</span>
+        </div>
+        <span class="logo-label">Stacked Wordmark</span>
+      </div>
+
+      <!-- Stamp -->
+      <div class="logo-cell dark-bg" style="background:#0A0A0A;">
+        <div class="logo-stamp">
+          <span>EA</span>
+          <span>Est. MMXXV</span>
+        </div>
+        <span class="logo-label">Stamp / Archive Logo</span>
+      </div>
+
+      <!-- Minimal / Icon -->
+      <div class="logo-cell light-bg" style="grid-column: span 2;">
+        <div style="display:flex; gap:5rem; align-items:center; justify-content:center;">
+          <span style="font-family:var(--font-sans); font-size:96px; font-weight:800; color:var(--void); letter-spacing:-0.04em; line-height:1;">E</span>
+          <span style="font-family:var(--font-sans); font-size:96px; font-weight:800; color:var(--void); letter-spacing:-0.04em; line-height:1; opacity:0.15;">I</span>
+          <span style="font-family:var(--font-sans); font-size:96px; font-weight:800; color:var(--void); letter-spacing:-0.04em; line-height:1; opacity:0.08;">M</span>
+          <span style="font-family:var(--font-sans); font-size:96px; font-weight:800; color:var(--void); letter-spacing:-0.04em; line-height:1; opacity:0.04;">I</span>
+        </div>
+        <span class="logo-label on-light">Minimal — Gradient Fade Logotype</span>
+      </div>
+
+      <!-- Luxury Label -->
+      <div class="logo-cell medium-bg">
+        <div style="border:1px solid rgba(255,255,255,0.15); padding: 1rem 1.75rem; display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <span style="font-family:var(--font-label); font-size:8px; letter-spacing:0.35em; color:rgba(255,255,255,0.35); text-transform:uppercase;">Luxury Premium</span>
+          <span style="font-family:var(--font-sans); font-size:26px; font-weight:800; letter-spacing:0.2em; color:white; text-transform:uppercase;">EIMI</span>
+          <div style="width:100%; height:0.5px; background:rgba(255,255,255,0.15);"></div>
+          <span style="font-family:var(--font-label); font-size:7px; letter-spacing:0.4em; color:rgba(255,255,255,0.25); text-transform:uppercase;">Apparel · Est. 2025</span>
+        </div>
+        <span class="logo-label">Luxury Label Version</span>
+      </div>
+    </div>
+
+    <div class="logo-detail-grid">
+      <div class="logo-detail-item">
+        <p class="logo-detail-title">Layout Philosophy</p>
+        <p class="logo-detail-body">The primary wordmark uses a high-tracked, ultra-weight sans-serif to command space with geometric confidence. The subordinate "Apparel" descriptor is set at 9-10% of the primary size in condensed light weight — ensuring hierarchy without competition. Minimum clear space: 2× the cap-height of the primary mark on all sides.</p>
+      </div>
+      <div class="logo-detail-item">
+        <p class="logo-detail-title">Shape Psychology</p>
+        <p class="logo-detail-body">The four letters E-I-M-I contain a deliberate visual rhythm: open forms followed by closed vertical strokes. This creates a visual "breath" in the mark — expansion and contraction that mirrors the brand's philosophy of restraint. The geometric sans letterforms carry authority without aggression.</p>
+      </div>
+      <div class="logo-detail-item">
+        <p class="logo-detail-title">Fashion Influence</p>
+        <p class="logo-detail-body">The wordmark draws from the logotype tradition of Celine (pre-2018), Loro Piana, and Totème — brands that use pure typographic marks without icons or ornament. The secondary serif italic variant nods to Korean luxury brands like Gentle Monster and Ader Error in their editorial applications.</p>
+      </div>
+      <div class="logo-detail-item">
+        <p class="logo-detail-title">Embroidery Application</p>
+        <p class="logo-detail-body">For fabric embroidery, use the primary wordmark at minimum 18mm width. The stamp version (EA monogram in a square border) is optimized for chest-patch and sleeve embroidery at 20–30mm. No serifs, gradients, or fine details — all embroidery versions must use solid flat fills with paths no thinner than 1.5mm at final size.</p>
+      </div>
+      <div class="logo-detail-item">
+        <p class="logo-detail-title">Color Versions</p>
+        <p class="logo-detail-body">Black on white. White on black. Stone (#8A8580) on off-white — for interior labels, tissue paper watermarks, and muted secondary applications. Avoid color versions unless for a limited campaign. The brand's monochrome discipline is a form of luxury restraint that should never be compromised for trend.</p>
+      </div>
+      <div class="logo-detail-item">
+        <p class="logo-detail-title">Social Media Icon</p>
+        <p class="logo-detail-body">The EA monogram in a perfect square — 1:1 ratio, full black background, white letterforms at 72pt Syne ExtraBold, letter-spacing 0.05em. No border radius. No drop shadow. No glow. The severity of the square icon communicates premium fashion seriousness in a 40×40px thumbnail that reads clearly at every scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 03 COLOR SYSTEM ─────────────────────────────────────── -->
+<section id="colors">
+  <div class="container">
+    <div class="section-label">03 — Color Palette System</div>
+    <h2 class="section-title">The Color<br>Language</h2>
+    <p class="lead">Four distinct palettes — each a complete world. Applied with discipline, these palettes form the chromatic backbone of every EIMI touchpoint.</p>
+    <div class="rule"></div>
+
+    <!-- Palette 01: VOID -->
+    <div class="palette-block">
+      <div class="palette-header">
+        <span class="palette-name">01 — VOID</span>
+        <span class="palette-sub">Matte Black Luxury · Primary Brand Palette</span>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background:#0A0A0A;"><span class="swatch-name" style="color:#555">Obsidian</span><span class="swatch-hex" style="color:#444">#0A0A0A</span></div>
+        <div class="swatch" style="background:#1A1A1A;"><span class="swatch-name" style="color:#666">Carbon</span><span class="swatch-hex" style="color:#555">#1A1A1A</span></div>
+        <div class="swatch" style="background:#2E2E2E;"><span class="swatch-name" style="color:#777">Charcoal</span><span class="swatch-hex" style="color:#666">#2E2E2E</span></div>
+        <div class="swatch" style="background:#4A4A4A;"><span class="swatch-name" style="color:#999">Iron</span><span class="swatch-hex" style="color:#888">#4A4A4A</span></div>
+        <div class="swatch" style="background:#767676;"><span class="swatch-name" style="color:#aaa">Graphite</span><span class="swatch-hex" style="color:#999">#767676</span></div>
+        <div class="swatch" style="background:#B0B0B0;"><span class="swatch-name" style="color:#555">Ash</span><span class="swatch-hex" style="color:#666">#B0B0B0</span></div>
+        <div class="swatch" style="background:#E8E8E8; border:1px solid #ddd;"><span class="swatch-name" style="color:#888">Fog</span><span class="swatch-hex" style="color:#999">#E8E8E8</span></div>
+      </div>
+      <div class="palette-details">
+        <div>
+          <h3 class="sub-title">Emotional Meaning</h3>
+          <p class="palette-meaning">VOID is the palette of absolute authority. Matte black as primary signals craftsmanship-first confidence — the same visual language used by Bottega Veneta, Rick Owens, and Ann Demeulemeester. It communicates that EIMI needs no decoration, no color, no signal beyond the quality of the thing itself. This is the core brand palette.</p>
+        </div>
+        <div>
+          <h3 class="sub-title">RGB Values</h3>
+          <p class="palette-usage">Obsidian: 10, 10, 10<br>Carbon: 26, 26, 26<br>Charcoal: 46, 46, 46<br>Iron: 74, 74, 74<br>Graphite: 118, 118, 118<br>Ash: 176, 176, 176<br>Fog: 232, 232, 232</p>
+        </div>
+        <div>
+          <h3 class="sub-title">Recommended Use</h3>
+          <p class="palette-usage">Primary on all garment labels. Packaging on mailers, tissue, and hang tags. Website background and primary UI. Instagram feed primary tone. Embroidery thread on white garments.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 02: SEOUL DUSK -->
+    <div class="palette-block">
+      <div class="palette-header">
+        <span class="palette-name">02 — SEOUL DUSK</span>
+        <span class="palette-sub">Korean Streetwear · Urban Twilight</span>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background:#1C1C28;"><span class="swatch-name" style="color:#555">Ink</span><span class="swatch-hex" style="color:#444">#1C1C28</span></div>
+        <div class="swatch" style="background:#2E3040;"><span class="swatch-name" style="color:#777">Midnight</span><span class="swatch-hex" style="color:#666">#2E3040</span></div>
+        <div class="swatch" style="background:#4A5060;"><span class="swatch-name" style="color:#999">Slate</span><span class="swatch-hex" style="color:#888">#4A5060</span></div>
+        <div class="swatch" style="background:#6B7080;"><span class="swatch-name" style="color:#aaa">Haze</span><span class="swatch-hex" style="color:#999">#6B7080</span></div>
+        <div class="swatch" style="background:#A8AFBE;"><span class="swatch-name" style="color:#555">Mist</span><span class="swatch-hex" style="color:#666">#A8AFBE</span></div>
+        <div class="swatch" style="background:#D4D8E2; border:1px solid #ccc;"><span class="swatch-name" style="color:#666">Cloud</span><span class="swatch-hex" style="color:#888">#D4D8E2</span></div>
+        <div class="swatch" style="background:#F0F2F6; border:1px solid #e0e0e0;"><span class="swatch-name" style="color:#888">Chalk</span><span class="swatch-hex" style="color:#aaa">#F0F2F6</span></div>
+      </div>
+      <div class="palette-details">
+        <div>
+          <h3 class="sub-title">Emotional Meaning</h3>
+          <p class="palette-meaning">SEOUL DUSK captures the blue-gray light of Seoul at 7pm — the coolest, most cinematic hour. It references the washed denim, dusty wool, and concrete-surface aesthetics of Korean streetwear labels like Ader Error, Juun.J, and Studio Nicholson. Slightly blue-toned, never warm — this palette reads as cosmopolitan and effortlessly elevated.</p>
+        </div>
+        <div>
+          <h3 class="sub-title">RGB Values</h3>
+          <p class="palette-usage">Ink: 28, 28, 40<br>Midnight: 46, 48, 64<br>Slate: 74, 80, 96<br>Haze: 107, 112, 128<br>Mist: 168, 175, 190<br>Cloud: 212, 216, 226<br>Chalk: 240, 242, 246</p>
+        </div>
+        <div>
+          <h3 class="sub-title">Recommended Use</h3>
+          <p class="palette-usage">Seasonal campaign photography. Limited-edition collection packaging. Website campaign banners. Product photography backgrounds. Lookbook editorial layouts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 03: TERROIR -->
+    <div class="palette-block">
+      <div class="palette-header">
+        <span class="palette-name">03 — TERROIR</span>
+        <span class="palette-sub">Earth Tones · Warm Neutrals · Organic Premium</span>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background:#2C1F14;"><span class="swatch-name" style="color:#555">Espresso</span><span class="swatch-hex" style="color:#444">#2C1F14</span></div>
+        <div class="swatch" style="background:#5C3D2E;"><span class="swatch-name" style="color:#999">Tobacco</span><span class="swatch-hex" style="color:#888">#5C3D2E</span></div>
+        <div class="swatch" style="background:#A67C52;"><span class="swatch-name" style="color:#fff">Camel</span><span class="swatch-hex" style="color:#eee">#A67C52</span></div>
+        <div class="swatch" style="background:#C9A880;"><span class="swatch-name" style="color:#5C3D2E">Sand</span><span class="swatch-hex" style="color:#7a5540">#C9A880</span></div>
+        <div class="swatch" style="background:#E1CCB0; border:1px solid #ccc;"><span class="swatch-name" style="color:#7a5540">Parchment</span><span class="swatch-hex" style="color:#9a6e50">#E1CCB0</span></div>
+        <div class="swatch" style="background:#EEE4D5; border:1px solid #ddd;"><span class="swatch-name" style="color:#8a6048">Linen</span><span class="swatch-hex" style="color:#9a7060">#EEE4D5</span></div>
+        <div class="swatch" style="background:#FAF6F0; border:1px solid #e8e0d5;"><span class="swatch-name" style="color:#888">Paper</span><span class="swatch-hex" style="color:#aaa">#FAF6F0</span></div>
+      </div>
+      <div class="palette-details">
+        <div>
+          <h3 class="sub-title">Emotional Meaning</h3>
+          <p class="palette-meaning">TERROIR evokes the warmth of handwoven fabric, aged natural dye, and the earth itself as material. This palette positions EIMI in a heritage-meets-modern space — aligning with brands like Auralee, Maison Margiela, and Lemaire in their use of organic warm neutrals. It reads as deeply considered and naturally luxurious without any ostentation.</p>
+        </div>
+        <div>
+          <h3 class="sub-title">CMYK Reference</h3>
+          <p class="palette-usage">Espresso: 0/29/52/83<br>Tobacco: 0/33/50/64<br>Camel: 0/25/51/35<br>Sand: 0/16/37/21<br>Parchment: 0/10/24/12<br>Linen: 0/6/14/7<br>Paper: 0/2/5/2</p>
+        </div>
+        <div>
+          <h3 class="sub-title">Recommended Use</h3>
+          <p class="palette-usage">Autumn/Winter seasonal collections. Tissue paper interiors. Thank-you card paper stock. Hang tag paper selection. Warm-tone product photography. Earth collection campaigns.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 04: MONOLITH -->
+    <div class="palette-block">
+      <div class="palette-header">
+        <span class="palette-name">04 — MONOLITH</span>
+        <span class="palette-sub">Monochrome Editorial · Clean Neutral Scale</span>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background:#111111;"><span class="swatch-name" style="color:#555">Jet</span><span class="swatch-hex" style="color:#444">#111111</span></div>
+        <div class="swatch" style="background:#3A3A3A;"><span class="swatch-name" style="color:#999">Smoke</span><span class="swatch-hex" style="color:#888">#3A3A3A</span></div>
+        <div class="swatch" style="background:#666666;"><span class="swatch-name" style="color:#ccc">Steel</span><span class="swatch-hex" style="color:#bbb">#666666</span></div>
+        <div class="swatch" style="background:#9A9A9A;"><span class="swatch-name" style="color:#444">Silver</span><span class="swatch-hex" style="color:#555">#9A9A9A</span></div>
+        <div class="swatch" style="background:#C8C8C8; border:1px solid #bbb;"><span class="swatch-name" style="color:#555">Pearl</span><span class="swatch-hex" style="color:#666">#C8C8C8</span></div>
+        <div class="swatch" style="background:#E4E4E4; border:1px solid #d0d0d0;"><span class="swatch-name" style="color:#666">Frost</span><span class="swatch-hex" style="color:#888">#E4E4E4</span></div>
+        <div class="swatch" style="background:#FAFAFA; border:1px solid #e0e0e0;"><span class="swatch-name" style="color:#999">White</span><span class="swatch-hex" style="color:#bbb">#FAFAFA</span></div>
+      </div>
+      <div class="palette-details">
+        <div>
+          <h3 class="sub-title">Emotional Meaning</h3>
+          <p class="palette-meaning">MONOLITH is the editorial photographer's palette — a pure achromatic scale where tone does all the work. Applied to fashion, it produces garments and imagery that feel architectural rather than decorative. This is the palette of fashion's most enduring visual language: black-and-white. Stark, honest, and never dated. References Helmut Lang, early DKNY, and Martin Margiela deconstructivism.</p>
+        </div>
+        <div>
+          <h3 class="sub-title">RGB Values</h3>
+          <p class="palette-usage">Jet: 17, 17, 17<br>Smoke: 58, 58, 58<br>Steel: 102, 102, 102<br>Silver: 154, 154, 154<br>Pearl: 200, 200, 200<br>Frost: 228, 228, 228<br>White: 250, 250, 250</p>
+        </div>
+        <div>
+          <h3 class="sub-title">Recommended Use</h3>
+          <p class="palette-usage">Campaign photography editing. B&W lookbook production. Website editorial pages. Poster design for drops. Hang tag typographic treatments. Social media grid alternating tiles.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── 04 TYPOGRAPHY ───────────────────────────────────────── -->
+<section id="typography">
+  <div class="container">
+    <div class="section-label">04 — Typography System</div>
+    <h2 class="section-title">The Type<br>Hierarchy</h2>
+    <p class="lead">Five typefaces. One complete voice. Each selected for its role in the EIMI identity — from display luxury to utilitarian label.</p>
+    <div class="rule"></div>
+
+    <div class="type-showcase">
+      <div class="type-row">
+        <div class="type-info">
+          <p class="type-role">Display / Logo</p>
+          <p class="type-font-name">Cormorant Garamond</p>
+          <p class="type-details">Light 300, Italic<br>Free — Google Fonts<br>Logo secondary, editorial pull-quotes</p>
+        </div>
+        <div class="type-sample-1">Elegance in every thread.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-info">
+          <p class="type-role">Primary / Logo / Headline</p>
+          <p class="type-font-name">Syne</p>
+          <p class="type-details">ExtraBold 800<br>Free — Google Fonts<br>Logo wordmark, campaign titles</p>
+        </div>
+        <div class="type-sample-2">EIMI APPAREL</div>
+      </div>
+      <div class="type-row">
+        <div class="type-info">
+          <p class="type-role">Body / Website / Packaging</p>
+          <p class="type-font-name">Jost</p>
+          <p class="type-details">Light 300, Regular 400<br>Free — Google Fonts<br>Product descriptions, about text</p>
+        </div>
+        <div class="type-sample-3">Crafted for those who understand that true luxury is a garment you reach for without thinking — because it has already earned its place in your vocabulary of style.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-info">
+          <p class="type-role">Labels / Utility / Social</p>
+          <p class="type-font-name">Barlow Condensed</p>
+          <p class="type-details">SemiBold 600, All-Caps<br>Free — Google Fonts<br>Hang tags, size labels, metadata</p>
+        </div>
+        <div class="type-sample-4">Premium Quality Garment</div>
+      </div>
+      <div class="type-row" style="border-bottom:none;">
+        <div class="type-info">
+          <p class="type-role">Editorial / Campaign Accent</p>
+          <p class="type-font-name">Cormorant Garamond</p>
+          <p class="type-details">Light Italic 300<br>Campaign captions, season names</p>
+        </div>
+        <div class="type-sample-5">Autumn / Winter — The Architecture of Quiet</div>
+      </div>
+    </div>
+
+    <div class="type-pairing">
+      <div>
+        <p class="pairing-label">Pairing A — Editorial / Luxury</p>
+        <p class="pairing-demo-a">Dressed in the architecture of restraint.</p>
+        <p class="pairing-demo-b">Cormorant Garamond Italic as headline. Jost Light as body. This pairing creates the classic tension of old-world serif luxury against modern humanist sans — the same visual grammar used by Jacquemus, Acne Studios, and COS in editorial contexts. Tracking on the serif: +0.04em. Body line-height: 1.85.</p>
+      </div>
+      <div>
+        <p class="pairing-label">Pairing B — Streetwear / Campaign</p>
+        <p class="pairing-demo-c">VOID SEASON</p>
+        <p class="pairing-demo-d">Syne ExtraBold for the mark. Barlow Condensed for the support text. High tracking. Full caps. This pairing channels the graphic-design precision of Supreme, Palace, and Korean brand Ader Error — strong typographic hierarchy where the headline dominates and everything else defers. Headline tracking: +0.15em. Support: +0.25em, all-caps.</p>
+      </div>
+    </div>
+
+    <div class="two-col mt-4">
+      <div>
+        <h3 class="sub-title">Premium Font Alternatives</h3>
+        <p class="body-text">For highest-tier applications (packaging, campaign, lookbooks), consider licensed fonts: <strong style="color:var(--void)">Neue Haas Grotesk</strong> (logo alternative to Syne — the typeface of MUJI and many Korean minimal brands), <strong style="color:var(--void)">Canela</strong> by Commercial Type (editorial display, used by Ssense and Ganni), or <strong style="color:var(--void)">Freight Display</strong> for luxury packaging.</p>
+      </div>
+      <div>
+        <h3 class="sub-title">Letter Spacing Guide</h3>
+        <p class="body-text">Logo primary wordmark: +0.22em. Section titles: +0.05em. Body text: 0 (natural). Utility labels: +0.20em. Monogram: +0.05em. The more utilitarian the use, the more generous the tracking — creating the fashion-label visual signature that reads as architectural rather than casual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 05 PATTERNS ────────────────────────────────────────── -->
+<section id="patterns">
+  <div class="container">
+    <div class="section-label">05 — Pattern &amp; Graphic Style</div>
+    <h2 class="section-title">Surface<br>Language</h2>
+    <p class="lead">Pattern concepts designed for tissue paper, tote bags, packaging liners, and subtle print applications across the EIMI product range.</p>
+    <div class="rule"></div>
+
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <div class="pattern-preview pat-lines"></div>
+        <div class="pattern-info">
+          <p class="pattern-title">Minimal Rule Lines</p>
+          <p class="pattern-desc">0.5px hairlines at 24px pitch. Black on white or reversed. Applications: tissue paper interior, box liner, tote bag woven texture reference.</p>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-preview pat-grid" style="background-color:#f5f2ee;"></div>
+        <div class="pattern-info">
+          <p class="pattern-title">EA Grid System</p>
+          <p class="pattern-desc">Architectural grid derived from the letter geometry. Maps 1:1 with the EA monogram proportions. Usage: packaging liner, lookbook grid, website section backgrounds.</p>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-preview pat-diagonal" style="background-color:#fafaf8;"></div>
+        <div class="pattern-info">
+          <p class="pattern-title">Diagonal Grain</p>
+          <p class="pattern-desc">45° hairline repeat. Soft grunge texture effect at scale. Applications: shipping mailer texture, sticker background, garment care tag backing.</p>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-preview pat-dots" style="background-color:#fafaf8;"></div>
+        <div class="pattern-info">
+          <p class="pattern-title">Micro Dot Field</p>
+          <p class="pattern-desc">1px radial dot grid at 18px pitch. Ultra-minimal texture. Use at 50% opacity over white for tissue paper and interior packaging. Embossable pattern at 1:8 scale.</p>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-preview" style="background:#0A0A0A; overflow:hidden;">
+          <div class="pat-wave-content">EIMI EIMI EIMI EIMI</div>
+        </div>
+        <div class="pattern-info">
+          <p class="pattern-title">Logotype Repeat</p>
+          <p class="pattern-desc">Oversized repeating wordmark at reduced opacity (15–20%). Applications: interior packaging base, branded tissue paper, tote bag all-over print, clothing care card border.</p>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-preview" style="background:#F5F2EE; overflow:hidden;">
+          <div class="pat-mono-ea">EA</div>
+        </div>
+        <div class="pattern-info">
+          <p class="pattern-title">EA Monogram Ghost</p>
+          <p class="pattern-desc">Large ghosted EA at low opacity behind product details. Creates depth without distraction. Applications: luxury paper bag interior, product photography backdrop.</p>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-preview" style="background:#E8D5BC; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; background: repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(92,61,46,0.08) 8px, rgba(92,61,46,0.08) 9px);"></div>
+          <div style="position:absolute; inset:0; background: repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(92,61,46,0.06) 8px, rgba(92,61,46,0.06) 9px);"></div>
+        </div>
+        <div class="pattern-info">
+          <p class="pattern-title">Woven Linen Texture</p>
+          <p class="pattern-desc">Simulated woven fabric texture in TERROIR palette tones. Applied to thank-you card stock selection, tissue paper options for earth-tone seasonal collections.</p>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-preview pat-japanese">
+          <svg viewBox="0 0 160 160" style="width:80px;height:80px;opacity:0.2;" xmlns="http://www.w3.org/2000/svg">
+            <path d="M80,10 Q130,10 150,80 Q130,150 80,150 Q30,150 10,80 Q30,10 80,10Z" fill="none" stroke="#5C3D2E" stroke-width="0.5"/>
+            <path d="M80,30 Q120,30 140,80 Q120,130 80,130 Q40,130 20,80 Q40,30 80,30Z" fill="none" stroke="#5C3D2E" stroke-width="0.5"/>
+            <path d="M80,50 Q110,50 130,80 Q110,110 80,110 Q50,110 30,80 Q50,50 80,50Z" fill="none" stroke="#5C3D2E" stroke-width="0.5"/>
+          </svg>
+        </div>
+        <div class="pattern-info">
+          <p class="pattern-title">Seigaiha Wave</p>
+          <p class="pattern-desc">Japanese overlapping wave motif reinterpreted in minimal linework. Subtle cultural nod to the brand's Asian fashion aesthetic. Application: occasional seasonal capsule graphics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 06 APPAREL DIRECTION ───────────────────────────────── -->
+<section id="apparel">
+  <div class="container">
+    <div class="section-label">06 — Apparel Design Direction</div>
+    <h2 class="section-title">Collection<br>Architecture</h2>
+    <p class="lead">Ten collection concepts that define the EIMI seasonal range — each a distinct visual and material world, all sharing the same foundational aesthetic.</p>
+    <div class="rule"></div>
+
+    <div class="collection-grid">
+      <div class="collection-card">
+        <span class="collection-num">01</span>
+        <div>
+          <p class="collection-title">VOID — Core Black Series</p>
+          <p class="collection-desc">The essential collection. Heavyweight oversized tees, premium hoodies, and unstructured joggers in obsidian, carbon, and charcoal. Minimal tonal embroidery. No graphics. The garment speaks through cut and weight alone.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#0A0A0A;"></div>
+            <div class="collection-swatch" style="background:#1A1A1A;"></div>
+            <div class="collection-swatch" style="background:#2E2E2E;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">02</span>
+        <div>
+          <p class="collection-title">LINEN SEASON — Summer Neutral</p>
+          <p class="collection-desc">Washed linen and cotton-linen blend pieces. Drop-shoulder silhouettes in paper white, parchment, and warm fog. Garments designed to wrinkle beautifully and feel more personal with each wear.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#F5F2EE;"></div>
+            <div class="collection-swatch" style="background:#E1CCB0;"></div>
+            <div class="collection-swatch" style="background:#C9A880;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">03</span>
+        <div>
+          <p class="collection-title">SEOUL GREY — Urban Edit</p>
+          <p class="collection-desc">Asymmetric paneled hoodies, wide-leg technical trousers, and oversized coaches in slate-blue gray tones. The cold-urban aesthetic of Seoul's Hongdae district translated into wearable form.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#2E3040;"></div>
+            <div class="collection-swatch" style="background:#4A5060;"></div>
+            <div class="collection-swatch" style="background:#A8AFBE;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">04</span>
+        <div>
+          <p class="collection-title">TERROIR — Earth Archive</p>
+          <p class="collection-desc">Natural fiber garments in tobacco, camel, and espresso. Subtle distressed dye effects on heavyweight fleece. The collection references the aesthetics of Japanese boro patchwork and Korean natural dye tradition in a modern streetwear silhouette.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#5C3D2E;"></div>
+            <div class="collection-swatch" style="background:#A67C52;"></div>
+            <div class="collection-swatch" style="background:#C9A880;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">05</span>
+        <div>
+          <p class="collection-title">MONOLITH — Editorial Capsule</p>
+          <p class="collection-desc">Limited-edition capsule. One garment per silhouette. Pure white or pure black. Oversized jacket, single-seam tee, wide trouser. Campaign-grade photography only. Drop quantity: under 100 units per item.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#111;"></div>
+            <div class="collection-swatch" style="background:#666;"></div>
+            <div class="collection-swatch" style="background:#FAFAFA; border:1px solid #ddd;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">06</span>
+        <div>
+          <p class="collection-title">GHOST — Washed Muted Tone</p>
+          <p class="collection-desc">Pre-washed, slightly faded garments that arrive already wearing history. Muted moss, faded slate, washed bone. Each piece is enzyme-washed to soften and create unique tonal variance — no two pieces identical.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#7A7D6E;"></div>
+            <div class="collection-swatch" style="background:#B0A898;"></div>
+            <div class="collection-swatch" style="background:#D8D2C4;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">07</span>
+        <div>
+          <p class="collection-title">ARCHIVE — Vintage Reissue</p>
+          <p class="collection-desc">Reimagined vintage athletic silhouettes — coach jackets, crewneck sweatshirts, track pants — rebuilt in premium materials and neutral tones. Vintage-inspired proportions with a modern quiet aesthetic. No retro graphics.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#2E2E2E;"></div>
+            <div class="collection-swatch" style="background:#5C3D2E;"></div>
+            <div class="collection-swatch" style="background:#E4E4E4;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">08</span>
+        <div>
+          <p class="collection-title">DUSK — Soft Winter Fleece</p>
+          <p class="collection-desc">Heavy-weight fleece collection for winter. Boxy silhouettes. Tactile surface in dusty plum, charcoal, and slate. The collection is designed to be worn as outerwear in temperate climates — structured enough to wear over nothing, soft enough to wear as an inner layer.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#3D2E40;"></div>
+            <div class="collection-swatch" style="background:#2E2E2E;"></div>
+            <div class="collection-swatch" style="background:#6B7080;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">09</span>
+        <div>
+          <p class="collection-title">NEGATIVE — White Statement Series</p>
+          <p class="collection-desc">The inverse of VOID. Premium white garments with black detail. Tonal white-on-white embroidery. Clean, clinical, and quietly radical. The anti-color statement. Laundering instructions printed in oversized black type on the inside hem — visible when worn untucked as a design detail.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#FAFAFA; border:1px solid #ddd;"></div>
+            <div class="collection-swatch" style="background:#E4E4E4;"></div>
+            <div class="collection-swatch" style="background:#111;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="collection-card">
+        <span class="collection-num">10</span>
+        <div>
+          <p class="collection-title">OBJECTS — Accessories Drop</p>
+          <p class="collection-desc">Non-apparel capsule: canvas tote bags, structured caps, minimal canvas pouches, phone sleeves. All in VOID palette. Designed to carry EIMI identity without garments — building brand touchpoints across daily utility objects.</p>
+          <div class="collection-palette">
+            <div class="collection-swatch" style="background:#0A0A0A;"></div>
+            <div class="collection-swatch" style="background:#C9A880;"></div>
+            <div class="collection-swatch" style="background:#E8E8E8;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4 mb-2">
+      <h3 class="sub-title">Print &amp; Embroidery Placement Guide</h3>
+    </div>
+    <div class="design-concepts-grid">
+      <div class="concept-card">
+        <div class="concept-icon">CHT</div>
+        <p class="concept-title">Chest Left — Minimal Logo</p>
+        <p class="concept-body">3–4cm embroidered EIMI wordmark at chest-left position. Thread color: matching or 10% darker than garment. No fill stitch — outline only for refined look. Standard placement for all core collection garments.</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">BCK</div>
+        <p class="concept-title">Oversized Back Print</p>
+        <p class="concept-body">Large-format back print using campaign typography or EA monogram pattern at 30–40cm width. For statement pieces only. Print technique: water-based discharge or screen print for a soft, absorbed finish.</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">SLV</div>
+        <p class="concept-title">Sleeve Type Treatment</p>
+        <p class="concept-body">Vertical text running down left or right sleeve: "EIMI APPAREL" in Barlow Condensed, 1.5cm height. Rotated 90°. Applied to hoodies, coaches, and long-sleeve tees. Creates a fashion-editorial visual that references Fear of God and Represent.</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">NPC</div>
+        <p class="concept-title">Neckline Interior Label</p>
+        <p class="concept-body">Woven label at neckline: EIMI wordmark + size + fabric content. Additional printed care label on left side seam. Both carry brand personality — even the care label uses brand typography. No generic label language.</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">HEM</div>
+        <p class="concept-title">Hem Drop Text</p>
+        <p class="concept-body">Small-scale typographic detail on the lower hem edge: season name, collection number, or brand phrase in 8pt Barlow Condensed. Visible when garment is worn untucked. Creates a deliberate "found detail" for the discerning customer.</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">ALL</div>
+        <p class="concept-title">All-Over Tonal Print</p>
+        <p class="concept-body">Reserved for seasonal capsules only. EA monogram or logotype repeat at 30% opacity on matching garment tone. Effect: barely visible pattern that reveals itself in certain light conditions. The print as whisper, not shout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 07 PACKAGING ───────────────────────────────────────── -->
+<section id="packaging">
+  <div class="container">
+    <div class="section-label">07 — Packaging System</div>
+    <h2 class="section-title">The Unboxing<br>Experience</h2>
+    <p class="body-text" style="color:rgba(255,255,255,0.5); max-width:600px; margin-bottom:3rem;">Every touchpoint from the moment the package arrives to the first wear of the garment is a designed moment. EIMI packaging is not a vessel — it is the first impression of the brand's commitment to craft.</p>
+
+    <div class="packaging-grid">
+      <div class="pack-item">
+        <div class="pack-icon">TAG</div>
+        <p class="pack-title">Hang Tag</p>
+        <p class="pack-material">400gsm Kraft / Black Duplex</p>
+        <p class="pack-detail">Vertical format. 55 × 90mm. Primary face: EIMI wordmark embossed at center. Secondary face: brand story paragraph in Jost Light, 7pt. Punched hole at top-left with black cotton twine. No price visible on the hang tag — pricing on a separate hidden internal tag only.</p>
+        <span class="finish-tag">Soft-Touch Laminate</span>
+        <span class="finish-tag">Spot UV Logo</span>
+      </div>
+      <div class="pack-item">
+        <div class="pack-icon">BAG</div>
+        <p class="pack-title">Shopping Bag</p>
+        <p class="pack-material">250gsm Matte Coated</p>
+        <p class="pack-detail">Portrait format. Matte black exterior with EIMI in glossy spot UV — creating a tactile contrast that is felt before it is seen. Interior: lined with a 10% opacity EIMI repeat pattern in stone. Black rope handles. Debossed EA stamp on bottom of bag.</p>
+        <span class="finish-tag">Matte Laminate</span>
+        <span class="finish-tag">Spot UV</span>
+        <span class="finish-tag">Debossed Base</span>
+      </div>
+      <div class="pack-item">
+        <div class="pack-icon">BOX</div>
+        <p class="pack-title">Rigid Apparel Box</p>
+        <p class="pack-material">2mm Greyboard / Art Paper Wrap</p>
+        <p class="pack-detail">Sliding drawer format. Exterior: matte black paper wrap with EIMI foil-stamped in warm silver. Interior: custom-cut tissue paper cradle in TERROIR linen tone. The box is designed to be kept — reused as a storage vessel, extending the brand's presence in the customer's space.</p>
+        <span class="finish-tag">Hot Foil Stamp</span>
+        <span class="finish-tag">Magnetic Closure</span>
+      </div>
+      <div class="pack-item">
+        <div class="pack-icon">MAIL</div>
+        <p class="pack-title">Shipping Mailer</p>
+        <p class="pack-material">Co-Ex Poly Mailer</p>
+        <p class="pack-detail">All-black matte poly mailer. EIMI stamp-logo printed at top-left in 20% white. Return address in Barlow Condensed at 8pt. Tear strip with a single line: "Handle as well as the garment inside." Secondary strip for returns. The mailer is the first physical brand touchpoint — make it count.</p>
+        <span class="finish-tag">Matte Black</span>
+        <span class="finish-tag">Custom Print</span>
+      </div>
+      <div class="pack-item">
+        <div class="pack-icon">TISSUE</div>
+        <p class="pack-title">Tissue Paper</p>
+        <p class="pack-material">17gsm MG Tissue</p>
+        <p class="pack-detail">Single sheet, folded to garment width. Two options by collection: VOID (black tissue, EA monogram watermark at 8% white) and LINEN (warm parchment tissue with stone-toned EIMI repeat at 12% opacity). The tissue is sealed with a round, embossed EIMI wax-effect sticker.</p>
+        <span class="finish-tag">Custom Print</span>
+        <span class="finish-tag">Wax Seal Sticker</span>
+      </div>
+      <div class="pack-item">
+        <div class="pack-icon">CARD</div>
+        <p class="pack-title">Thank-You Card</p>
+        <p class="pack-material">400gsm Cotton Paper</p>
+        <p class="pack-detail">A6 format. One side only — never two-sided. A single italic line in Cormorant Garamond: "Thank you for choosing what lasts." Below: the EIMI EA monogram stamped at 3cm. Printed in black on warm white cotton stock. No offer codes, no marketing — only an authentic moment of gratitude.</p>
+        <span class="finish-tag">Letterpress</span>
+        <span class="finish-tag">Cotton Stock</span>
+      </div>
+      <div class="pack-item">
+        <div class="pack-icon">LABEL</div>
+        <p class="pack-title">Woven Neck Label</p>
+        <p class="pack-material">Damask Woven Label</p>
+        <p class="pack-detail">EIMI wordmark woven in white on black damask. 35mm width. Folded label (not straight-cut) for premium feel at neckline. Second woven label on left side seam: size, fabric content, origin. Third printed satin label directly below: care symbols and brand website URL in Jost Light at 6pt.</p>
+        <span class="finish-tag">Damask Weave</span>
+        <span class="finish-tag">Soft Satin</span>
+      </div>
+      <div class="pack-item">
+        <div class="pack-icon">STKR</div>
+        <p class="pack-title">Brand Sticker Set</p>
+        <p class="pack-material">Vinyl / Die-Cut</p>
+        <p class="pack-detail">Set of three stickers included in each order: (1) EIMI wordmark on matte black, 80mm. (2) EA monogram circle seal, 40mm. (3) campaign phrase sticker in Cormorant Garamond italic on translucent stock, 90mm. Die-cut to shape. Matte finish. These become brand ambassadors on customers' personal items.</p>
+        <span class="finish-tag">Matte Vinyl</span>
+        <span class="finish-tag">Die-Cut</span>
+      </div>
+      <div class="pack-item">
+        <div class="pack-icon">WRAP</div>
+        <p class="pack-title">Garment Zip Bag</p>
+        <p class="pack-material">Frosted LDPE Poly</p>
+        <p class="pack-detail">Frosted zip-lock bag for individual garment protection. EIMI wordmark in one corner at 30% opacity. Provides product protection while maintaining premium aesthetic — the frosted material makes the garment visible, creating anticipation even before the bag is opened.</p>
+        <span class="finish-tag">Frosted LDPE</span>
+        <span class="finish-tag">Minimal Print</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 08 SOCIAL MEDIA ────────────────────────────────────── -->
+<section id="social">
+  <div class="container">
+    <div class="section-label">08 — Social Media Branding</div>
+    <h2 class="section-title">Digital<br>Presence</h2>
+    <p class="lead">EIMI's digital identity follows the same discipline as its garments — every post is curated, every frame deliberate. No clutter. No noise. No compromise.</p>
+    <div class="rule"></div>
+
+    <div class="social-grid">
+      <div class="social-platform">
+        <p class="platform-icon">Instagram</p>
+        <p class="platform-title">Feed Aesthetic</p>
+        <p class="platform-body">3×3 grid aesthetic: alternating product-flat, editorial-model, and negative-space-detail frames. Color correction to MONOLITH palette — desaturated, with a cool +5 hue shift and −10 saturation. Consistent 1:1 ratio for grid integrity. No carousel infographics. Every post earns its existence.</p>
+        <br>
+        <p class="platform-title">Story Templates</p>
+        <p class="platform-body">Full-bleed black background. White Syne ExtraBold for any text. Only used for: restock alerts, drop countdowns, and behind-the-scenes textile detail shots. No aesthetic-breaking announcement graphics. Brand discipline applies equally to temporary content.</p>
+      </div>
+      <div class="social-platform">
+        <p class="platform-icon">TikTok</p>
+        <p class="platform-title">Video Aesthetic</p>
+        <p class="platform-body">Cinematic slow-motion unboxing. Fabric texture close-ups in natural light. GRWM (Get Ready With Me) content by the brand's own aesthetic — no fast-cut, no trending audio for its own sake. Music: lo-fi instrumental Korean or Japanese ambient only. Content tone: calm confidence. Duration: 15–45 seconds.</p>
+        <br>
+        <p class="platform-title">Viral Content Formula</p>
+        <p class="platform-body">The "Before and After" outfit transformation (no music, ASMR fabric sounds only). The "This is how we pack your order" — slow, satisfying, premium. The "Why our shirts cost what they cost" — fabric closeups, factory process, transparency. These perform because they answer real audience questions with brand integrity.</p>
+      </div>
+      <div class="social-platform">
+        <p class="platform-icon">Pinterest</p>
+        <p class="platform-title">Board Strategy</p>
+        <p class="platform-body">Five boards: (1) EIMI Wardrobe — curated product shots. (2) The EIMI Aesthetic — inspirational imagery matching brand mood. (3) Seoul / Tokyo Reference — city aesthetics the brand draws from. (4) Texture Library — fabric and material close-ups. (5) Architecture of Quiet — minimal spaces and objects that share the brand's visual DNA.</p>
+        <br>
+        <p class="platform-title">Save-Worthy Content</p>
+        <p class="platform-body">Outfit formulas (specific product + how to style it). Seasonal edit roundups. Brand mood graphics with campaign lines in Cormorant Garamond italic. These drive purchase-intent traffic from aspirational savers directly to product pages.</p>
+      </div>
+    </div>
+
+    <!-- Content Pillars -->
+    <div class="mt-4 mb-2">
+      <h3 class="sub-title">Content Pillars — 5-Bucket Strategy</h3>
+    </div>
+    <div class="content-pillars">
+      <div class="pillar">
+        <span class="pillar-pct">30%</span>
+        <span class="pillar-name">Product</span>
+        <p class="pillar-desc">Clean product photography, flat-lays, texture close-ups. Always in brand palette. Never on white boxes or colored backgrounds.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-pct">25%</span>
+        <span class="pillar-name">Editorial</span>
+        <p class="pillar-desc">Campaign-quality model photography. Cinematic lighting. Mono or duotone editing. The aspirational pillar.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-pct">20%</span>
+        <span class="pillar-name">Culture</span>
+        <p class="pillar-desc">Seoul/Tokyo aesthetic references. Music, art, design that resonates with the brand world. No direct product.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-pct">15%</span>
+        <span class="pillar-name">Process</span>
+        <p class="pillar-desc">Fabric sourcing, packaging creation, behind-scenes craft. Builds brand trust and transparency narrative.</p>
+      </div>
+      <div class="pillar">
+        <span class="pillar-pct">10%</span>
+        <span class="pillar-name">Community</span>
+        <p class="pillar-desc">Customer OOTD reposts (curated only — must match aesthetic). No ugly reposted screenshots. Edit first, always.</p>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <h3 class="sub-title">Photography Direction</h3>
+      <div class="mood-grid">
+        <div class="mood-card" style="background:#0A0A0A;">
+          <p class="mood-keyword" style="color:rgba(255,255,255,0.5);">Window Light</p>
+        </div>
+        <div class="mood-card" style="background:#E8E3DC;">
+          <p class="mood-keyword" style="color:#4A4540;">Overcast White</p>
+        </div>
+        <div class="mood-card" style="background:#2E3040;">
+          <p class="mood-keyword" style="color:rgba(255,255,255,0.5);">Urban Dusk</p>
+        </div>
+        <div class="mood-card" style="background:#C9A880;">
+          <p class="mood-keyword" style="color:#3A2510;">Afternoon Gold</p>
+        </div>
+        <div class="mood-card" style="background:#F5F2EE; border:1px solid var(--fog);">
+          <p class="mood-keyword" style="color:#8A8580;">Studio White</p>
+        </div>
+        <div class="mood-card" style="background:#4A5060;">
+          <p class="mood-keyword" style="color:rgba(255,255,255,0.5);">Concrete Grey</p>
+        </div>
+        <div class="mood-card" style="background:#1A1A1A;">
+          <p class="mood-keyword" style="color:rgba(255,255,255,0.35);">Void Dark</p>
+        </div>
+        <div class="mood-card" style="background:#EEE4D5;">
+          <p class="mood-keyword" style="color:#7A6040;">Warm Linen</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="photo-direction mt-4">
+      <div class="photo-rule">
+        <p class="photo-title">Lighting Direction</p>
+        <p class="photo-body">Single natural light source — never ring lights or direct flash. Window light from left or behind-left creates the architectural shadow play the brand requires. No reflectors (allow shadow to exist). For studio shots: large format softbox at 45° camera-left only. The goal is sculptural — treating fabric as architecture, the model as the landscape it inhabits.</p>
+      </div>
+      <div class="photo-rule">
+        <p class="photo-title">Model Direction</p>
+        <p class="photo-body">Neutral expressions. Looking away from lens in 70% of shots. Hands in pockets or at sides — never posed unnaturally. Models cast for their presence, not conventional beauty. Diverse in every dimension except aesthetic alignment — every person in front of an EIMI camera must embody the brand's quiet-confidence archetype.</p>
+      </div>
+      <div class="photo-rule">
+        <p class="photo-title">Editing Style</p>
+        <p class="photo-body">Lightroom preset: −15 saturation, +8 contrast, −10 highlights, +15 shadows, +3 cool tint. All EIMI photography exists in a slight desaturated cool world — never vivid, never warm. A consistent edit across all content creates the visual coherence that makes the brand recognizable before the logo is visible. The edit is the signature.</p>
+      </div>
+      <div class="photo-rule">
+        <p class="photo-title">Locations</p>
+        <p class="photo-body">Architectural spaces. Empty parking structures. Concrete stairwells. Gallery-white rooms. Rooftops at dusk. Quiet café interiors — but shot from the perspective of an observer, not a participant. EIMI garments are photographed in environments that share their visual language: structure, restraint, and considered space.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BRAND AESTHETIC MOODBOARD ──────────────────────────── -->
+<section id="aesthetic">
+  <div class="container">
+    <div class="section-label">09 — Brand Aesthetic System</div>
+    <h2 class="section-title">The Visual<br>World</h2>
+    <p class="lead">Keywords, atmosphere, and sensory reference points that define the EIMI brand universe — the filter through which every creative decision must pass.</p>
+    <div class="rule"></div>
+
+    <h3 class="sub-title">Atmosphere Words</h3>
+    <div class="atmosphere-words">
+      <span class="atm-word size-4">Restraint</span>
+      <span class="atm-word size-2">Wabi-sabi</span>
+      <span class="atm-word size-3">Considered</span>
+      <span class="atm-word size-1">Precise</span>
+      <span class="atm-word size-4">Silence</span>
+      <span class="atm-word size-2">Editorial</span>
+      <span class="atm-word size-1">Sparse</span>
+      <span class="atm-word size-3">Architectural</span>
+      <span class="atm-word size-2">Monochrome</span>
+      <span class="atm-word size-4">Timeless</span>
+      <span class="atm-word size-1">Tonal</span>
+      <span class="atm-word size-3">Cinematic</span>
+      <span class="atm-word size-2">Minimal</span>
+      <span class="atm-word size-4">Premium</span>
+      <span class="atm-word size-1">Craft</span>
+      <span class="atm-word size-3">Quiet</span>
+      <span class="atm-word size-2">Seoul</span>
+      <span class="atm-word size-1">Deliberate</span>
+      <span class="atm-word size-3">Elevated</span>
+      <span class="atm-word size-2">Effortless</span>
+      <span class="atm-word size-4">Presence</span>
+      <span class="atm-word size-1">Texture</span>
+      <span class="atm-word size-2">Dusk</span>
+      <span class="atm-word size-3">Gravity</span>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="two-col">
+      <div>
+        <h3 class="sub-title">Reference Brands</h3>
+        <div class="tag-list mb-3">
+          <span class="tag">Fear of God Essentials</span>
+          <span class="tag">COS</span>
+          <span class="tag">Represent</span>
+          <span class="tag">Ader Error</span>
+          <span class="tag">Gentle Monster</span>
+          <span class="tag">Auralee</span>
+          <span class="tag">Lemaire</span>
+          <span class="tag">Studio Nicholson</span>
+          <span class="tag">Totème</span>
+          <span class="tag">Baserange</span>
+        </div>
+        <h3 class="sub-title">Reference Creatives</h3>
+        <div class="tag-list">
+          <span class="tag">Daido Moriyama</span>
+          <span class="tag">Viviane Sassen</span>
+          <span class="tag">Ren Hang</span>
+          <span class="tag">Nick Knight</span>
+          <span class="tag">Park Seo-bo</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="sub-title">What EIMI Is Never</h3>
+        <p class="body-text" style="margin-bottom:1rem;">Understanding the anti-aesthetic is as important as the aesthetic itself. EIMI is not:</p>
+        <div class="tag-list">
+          <span class="tag" style="color:#C0392B; border-color:#F5C0C0;">Loud branding</span>
+          <span class="tag" style="color:#C0392B; border-color:#F5C0C0;">Neon colorways</span>
+          <span class="tag" style="color:#C0392B; border-color:#F5C0C0;">Hype-driven drops</span>
+          <span class="tag" style="color:#C0392B; border-color:#F5C0C0;">Seasonal trend-chasing</span>
+          <span class="tag" style="color:#C0392B; border-color:#F5C0C0;">Over-branded</span>
+          <span class="tag" style="color:#C0392B; border-color:#F5C0C0;">Streetwear parody</span>
+          <span class="tag" style="color:#C0392B; border-color:#F5C0C0;">Fast fashion adjacent</span>
+          <span class="tag" style="color:#C0392B; border-color:#F5C0C0;">Discount culture</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL SUMMARY ──────────────────────────────────────── -->
+<section id="final">
+  <div class="container">
+    <div class="section-label" style="color:rgba(255,255,255,0.25); justify-content:center; margin-bottom:3rem;">10 — Final Brand Identity Summary</div>
+    <p class="final-title">EIMI</p>
+    <p class="final-sub">"A brand built not on what it adds, but on what it refuses to. Every decision — fabric, typeset, thread, silence — is a deliberate act of considered luxury."</p>
+
+    <div class="brand-dna">
+      <div class="dna-cell">
+        <p class="dna-label">Brand Archetype</p>
+        <p class="dna-value">The Quiet Ruler — authority through absence of excess</p>
+      </div>
+      <div class="dna-cell">
+        <p class="dna-label">Visual Language</p>
+        <p class="dna-value">Monochrome editorial, Korean streetwear minimalism</p>
+      </div>
+      <div class="dna-cell">
+        <p class="dna-label">Brand Promise</p>
+        <p class="dna-value">Garments you reach for without thinking — because they have earned that trust</p>
+      </div>
+      <div class="dna-cell">
+        <p class="dna-label">Core Aesthetic</p>
+        <p class="dna-value">Minimal luxury — where silence is the loudest statement</p>
+      </div>
+      <div class="dna-cell">
+        <p class="dna-label">Primary Color</p>
+        <p class="dna-value">Obsidian #0A0A0A — the color of complete conviction</p>
+      </div>
+      <div class="dna-cell">
+        <p class="dna-label">Typography Soul</p>
+        <p class="dna-value">Syne ExtraBold commands. Cormorant whispers. Jost informs.</p>
+      </div>
+      <div class="dna-cell">
+        <p class="dna-label">Packaging Feel</p>
+        <p class="dna-value">Matte black. Soft-touch. Embossed. The unboxing as ritual.</p>
+      </div>
+      <div class="dna-cell">
+        <p class="dna-label">Brand Voice</p>
+        <p class="dna-value">Sparse. Poetic. Precise. Every word earns its place.</p>
+      </div>
+    </div>
+
+    <div class="final-footer">
+      <span>EIMI APPAREL — Complete Brand Kit</span>
+      <span>Confidential Brand Document · 2025</span>
+      <span>Brand Identity System v1.0</span>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
